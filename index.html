@@ -8,8 +8,33 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <style>     
+      .inter-font {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
 </head>
-<body>
+<body class="inter-font">
+  <header class="w-11/12 mx-auto">
+    <!-- Navbar Starts -->
+      <nav class="flex justify-between items-center px-2 py-6">
+        <div class="logo cursor-pointer">
+          <img src="./assets/Logo.png" alt="logo" />
+        </div>
+        <div class="Sort">
+          <button class="btn btn-soft font-medium text-lg">Sort By View</button>
+        </div>
+        <div class="blogs">
+          <button class="btn bg-[#FF1F3D] font-medium text-white text-lg">Blogs</button>
+        </div>
+      </nav>
+      <div class="border border-[#17171720]"></div>
+  </header>
     
 </body>
 </html>

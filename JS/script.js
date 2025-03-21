@@ -15,6 +15,15 @@ function loadVideos() {
         .then((data) => displayVideos(data.videos));
 }
 
+const loadCategoryVideos = (id) => {
+    const url = `https://openapi.programming-hero.com/api/phero-tube/category/${id}`;
+    console.log(url);
+
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => displayVideos(data.category));
+};
+
 
 // {
 //     "category_id": "1001",
@@ -28,7 +37,7 @@ function displayCategories(categories) {
         const categoryDiv = document.createElement("div");
 
         categoryDiv.innerHTML = `
-        <button class="btn btn-sm btn-soft font-medium px-4 hover:bg-[#FF1F3D] hover:text-white">${cat.category}</button>
+        <button  onclick="loadCategoryVideos(${cat.category_id})"  class="btn btn-sm btn-soft font-medium px-4 hover:bg-[#FF1F3D] hover:text-white">${cat.category}</button>
         `;
 
         categoryContainer.append(categoryDiv);
@@ -59,6 +68,8 @@ function displayCategories(categories) {
 const displayVideos = (videos) => {
     const videoContainer = document.getElementById("video-container");
 
+    videoContainer.innerHTML = "";
+
     videos.forEach((video) => {
         console.log(video);
 
@@ -83,11 +94,11 @@ const displayVideos = (videos) => {
            </div>
  
            <div class="intro">
-             <h2 class="text-sm font-semibold">Midnight Serenade</h2>
-             <p class="text-sm text-gray-400 flex gap-1">
+             <h2 class="font-bold">Midnight Serenade</h2>
+             <p class="text-gray-400 flex gap-1">
               ${video.authors[0].profile_name}
                <img
-                 class="w-5 h-5"
+                 class="ml-1 w-5 h-5"
                  src="https://img.icons8.com/?size=96&id=98A4yZTt9abw&format=png"
                  alt=""
                />
@@ -103,4 +114,3 @@ const displayVideos = (videos) => {
 };
 
 loadCategories();
-loadVideos();

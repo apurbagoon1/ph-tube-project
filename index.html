@@ -30,7 +30,6 @@
 
 <body class="inter-font">
   <header class="w-11/12 mx-auto">
-    <!-- Navbar Starts -->
     <nav class="flex justify-between items-center px-2 py-6">
       <div class="logo cursor-pointer">
         <img class="w-40" src="./assets/Logo.png" alt="logo" />
@@ -52,7 +51,6 @@
     </nav>
     <div class="border border-[#17171720]"></div>
 
-    <!-- Navbar with category -->
     <nav id="category-container" class="flex py-5 justify-center gap-6">
       <div>
         <button id="btn-all" onclick="loadVideos()" class="btn btn-soft btn-sm font-medium px-4">All</button>
@@ -60,7 +58,11 @@
     </nav>
   </header>
 
-  <main class="w-11/12 mx-auto ">
+  <main class="w-11/12 mx-auto">
+    <section id="loader" class="text-center hidden">
+      <span class="loading loading-dots loading-xl"></span>
+    </section>
+
     <section id="video-container" class="grid grid-cols-4 gap-6 mb-6">
       <div class="py-20 col-span-full flex flex-col justify-center items-center text-center">
         <img class="w-40 mb-6" src="./assets/Icon.png" alt="" />

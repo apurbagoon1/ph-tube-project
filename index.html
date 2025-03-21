@@ -33,13 +33,21 @@
     <!-- Navbar Starts -->
     <nav class="flex justify-between items-center px-2 py-6">
       <div class="logo cursor-pointer">
-        <img src="./assets/Logo.png" alt="logo" />
+        <img class="w-40" src="./assets/Logo.png" alt="logo" />
       </div>
+
+      <label class="input">
+        <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </g>
+        </svg>
+        <input id="search-input" type="search" required placeholder="Search" />
+      </label>
+
       <div class="Sort">
-        <button class="btn btn-soft font-medium text-lg">Sort By View</button>
-      </div>
-      <div class="blogs">
-        <button class="btn bg-[#FF1F3D] font-medium text-white text-lg">Blogs</button>
+        <button class="btn btn-soft font-medium">Sort By View</button>
       </div>
     </nav>
     <div class="border border-[#17171720]"></div>

@@ -40,6 +40,14 @@ const loadCategoryVideos = (id) => {
         });
 };
 
+const loadVideoDetails = (videoId) => {
+    console.log(videoId);
+    const url = `https://openapi.programming-hero.com/api/phero-tube/video/${videoId}`;
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => displayVideoDetails(data.video));
+};
+
 
 // {
 //     "category_id": "1001",
@@ -109,7 +117,7 @@ const displayVideos = (videos) => {
         videoCard.innerHTML = `
         <div class="card bg-base-100">
          <figure class="relative">
-           <img class="w-full h-44 object-cover" src="${video.thumbnail}" alt="Shoes" />
+           <img class="w-full h-44 object-cover" src="${video.thumbnail}" alt="" />
            <span
              class="absolute bottom-2 right-2 text-sm rounded text-white bg-black px-2">3hrs 56 min ago
             </span>
@@ -125,7 +133,7 @@ const displayVideos = (videos) => {
            </div>
  
            <div class="intro">
-             <h2 class="font-bold">Midnight Serenade</h2>
+             <h2 class="font-bold">${video.title}</h2>
              <p class="text-gray-400 flex gap-1">
               ${video.authors[0].profile_name}
                <img
@@ -137,11 +145,36 @@ const displayVideos = (videos) => {
              <p class="text-sm text-gray-400">${video.others.views} views</p>
            </div>
          </div>
-       </div>
-        
+         <button onclick=loadVideoDetails('${video.video_id
+            }') class="btn btn-block rounded-lg rounded-t-none">Show Details</button>
+       </div>        
         `;
+
         videoContainer.append(videoCard);
     });
+};
+
+const displayVideoDetails = (video) => {
+    console.log(video);
+    document.getElementById("video_details").showModal();
+    const detailsContainer = document.getElementById("details-container");
+
+    detailsContainer.innerHTML = `
+    <div class="card bg-base-100 image-full shadow-sm">
+    <figure>
+      <img
+        src="${video.thumbnail}"
+        alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">${video.title}</h2>
+      <p>${video.description}</p>
+      <div class="card-actions justify-end">
+        
+      </div>
+    </div>
+  </div>
+    `;
 };
 
 loadCategories();

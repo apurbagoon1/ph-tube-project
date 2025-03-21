@@ -70,6 +70,21 @@ const displayVideos = (videos) => {
 
     videoContainer.innerHTML = "";
 
+
+    if (videos.length == 0) {
+        videoContainer.innerHTML = `
+    <div
+        class="py-20 col-span-full flex flex-col justify-center items-center text-center"
+      >
+        <img class="w-40 mb-6" src="./assets/Icon.png" alt="" />
+        <h2 class="text-3xl font-bold">
+          Oops!! Sorry, There is no <br> content here.
+        </h2>
+      </div>
+    `;
+        return;
+    }
+
     videos.forEach((video) => {
         console.log(video);
 

@@ -133,9 +133,9 @@ const displayVideos = (videos) => {
         videoCard.innerHTML = `
         <div class="card bg-base-100">
          <figure class="relative">
-           <img class="w-full h-44 object-cover" src="${video.thumbnail}" alt="" />
-           <span
-             class="absolute bottom-2 right-2 text-sm rounded text-white bg-black px-2">3hrs 56 min ago
+           <img class="w-full h-44 object-cover" src="${video.thumbnail}" alt=""/>
+            <span
+              class="absolute bottom-2 right-2 text-sm rounded text-white bg-[#00000050] px-2">3 hr 50 min ago
             </span>
          </figure>
         <div class="flex gap-3 px-0 py-5">

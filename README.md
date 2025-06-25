@@ -44,8 +44,8 @@ PH Tube is a dynamic and interactive video browsing web application built with v
 1. **Clone the repository:**
    
    go to terminal and paste
-   git clone https://github.com/apurbagoon1/ph-tube-project.git
-   cd ph-tube
+   - git clone https://github.com/apurbagoon1/ph-tube-project.git
+   - cd ph-tube
    
 2. **Open index.html in your preferred browser:**
 
